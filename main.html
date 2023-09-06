@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<!--
+    Die Webseite ist in mehrere Phasen aufgeteilt. Und die Webseite besteht aus nur 3 Dateien: Der normalen html, der css und js
+    HTML ist der Teil, wo man Texte und Bilder einfügt. Also der Inhalt der Webseite.
+    Css ist der Teil, wo man sagt, wie was aussehen soll. 
+    JS ist der eigentliche Programmierteil, bei dem man, ähnlich wie bei C# für Unity, programmiert.
+
+    In den Kommentaren steht nun, was wann und warum drin ist.
+-->
+<head>
+    <link rel="stylesheet" href="design.css"> <!--Wir sagen, dass die css Datei genutzt werden soll-->
+    <script src="script.js"></script> <!--Wir sagen, dass die JS Datei genutzt werden soll.-->
+</head>
+
+<body>  <!--Hier steht der Hauptteil, also das sichtbare, drin.-->
+    <img src="Bilder/mey-logo.jpg" id="Logo" onclick="Hide('','StartDiv','hide')"> <!--Zuerst setze ich die Bilder ein. das "onclick="Hide()"" ist eine Funktion in der JS Datei. Da gebe ich ein, was unsichtbar, sichtbar etc gemacht werden soll"-->
+    <img src="Bilder/p4.png" id="Img1"> <!--Jedes Objekt in HTML, wenn ich das in css ändern will, braucht eine ID oder Klasse. ID sollte einmalig sein, Klasse ist allgemein-->
+    <img src="Bilder/p2.png" id="Img2"> <!--Entsprechend gebe ich den Bildern jeweils eine eigene ID. Weil jede anders aussehen soll.-->
+    <img src="Bilder/p1.png" id="Img3">
+    <img src="Bilder/p3.png" id="Img4">
+
+    <div id="StartDiv"> <!--Hier startet ein Div (Kasten), in die erste Szene drin beschrieben wird.-->
+        <h1>Willkommen</h1> <!--Überschrift. Sowas muss immer mit </h1> enden. Ändlich wie bei <p>, endet auf </p>-->
+
+        <br><br> <!--break, also Zeilenumbruch-->
+        <p>Finden Sie Ihre passende Größe mit dem digitalen BH Größenberater.
+           
+            
+        </p>    <!--p für Paragraph-->
+        <p>
+            Drücken Sie start und folgen Sie den Anweisungen.</p>
+        <button onclick="Hide('StartDiv','Unterbrustumfang', 'Gif1');"> <!--Der Button der beim Klick die Funktion ausführt und das nächste Fenster anzeigt.-->
+            <p class="TextInButton">Start</p> 
+        </button>
+    </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------->
+  <!-- Unterbrust -->
+  
+  <div id="Unterbrustumfang"> <!--Der Unterbrust-Teil, also zweites Panel.-->
+
+
+    <h1>Schritt 1: Der Unterbrustumfang</h1>
+    <br>
+    <p>Messen Sie zunächst Ihren Unterbrustumfang</p>
+    <p>
+        Der Unterbrustumfang misst sich direkt unter der Brust. Messen Sie diesen Wert und geben Sie diesen anschließend in das Textfeld ein.</p>
+    <form style="margin-top: 50px;" onsubmit="Hide('Unterbrustumfang','Oberbrustweite', 'Gif2'); BrustInfo('Unterbrust'); return false;"> <!--Eine Form, also zum ausfüllen-->
+        <input type="number" id="Unterbrust" placeholder="Weite in cm"/><p class="ErrorText" id="ErrorUnter" style="z-index: 500;">Wert zu hoch oder zu niedrig</p>
+    </form>
+
+    <!--Button, den ich mal entfernt hatte. Er tut aber prinzipiell. kann man auch wieder einfügen.-->
+
+<!--    <button onclick="Hide('Unterbrustumfang','Oberbrustweite', 'Gif2'); BrustInfo('Unterbrust');">
+        <p class="TextInButton">Eingabe festlegen</p>
+    </button>
+-->
+</div>
+<video autoplay muted loop class="vid" id="Gif1"> <!--Das Video mit der Animation-->
+    <source src="Bilder/UnterbrustVid.mp4" type="video/mp4">
+</video>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------->
+<!--Das gleiche wie bei Unterbrust-->
+<!-- Oberbrust -->
+
+<div id="Oberbrustweite">
+    <h1>Schritt 2: Der Brustumfang </h1>
+    <br>
+    <p>Messen Sie nun Ihren Brustumfang.</p>
+    <p>
+
+        Der Brustumfang misst sich horizontal auf der Höhe der Brustspitzen. Messen Sie diesen Wert und geben Sie diesen anschließend in das Textfeld ein.</p>
+
+    <form style="margin-top: 50px;" onsubmit="Hide('Oberbrustweite', 'Ergebnis', 'hide'); BrustInfo('Oberbrust'); return false;">
+        <input type="number" id="Oberbrust" placeholder="Weite in cm" maxlength="3"><p class="ErrorText" id="ErrorOber" style="z-index: 500;">Wert zu hoch oder zu niedrig. </p>
+    </form>
+  <!--  <button onclick="Hide('Oberbrustweite', 'Ergebnis', 'hide'); BrustInfo('Oberbrust');">
+        <p class="TextInButton">Eingabe festlegen</p>
+    </button>-->
+</div>
+   
+    <video autoplay muted loop class="vid" id="Gif2">
+        <source src="Bilder/OberbrustVid.mp4" type="video/mp4">
+    </video>
+  
+
+<!----------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- Ergebnis -->
+
+    <div id="Ergebnis" style="visibility: hidden;">
+        <h1>Ihre BH Größe wurde berechnet! </h1>
+        <br>
+        <p>Ihre BH Größte entspricht:</p>
+        <h2 id="BHSize">Error</h2> <!--Der Inhalt wird in JS geändert. Aber Standard ist halt Error-->
+        <p id="BralletsText">Ihre Braletts Größe entspricht:</p>
+        <h2 id="BralletsSize"></h2> <!--Inhalt wird in JS über die ID gesetzt-->
+        <br><br>
+        <br><br>
+        <button onclick="Hide('Ergebnis', 'BH-Finder','Render');">
+            <p class="TextInButton">Zum BH-Finder</p>
+        </button>
+    </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------->
+
+
+    <!--Image des Shops-->
+    <div id="Shop">
+    <h2 style="margin-top: 5%;">BH's Ihrer Größe finden Sie hier:</h2>
+    <div class="ShopImageContainer">
+   <img src="Bilder/Render.png" class="ShopImage" id="ShopImage"></div></div>
+
+    <!-- BH FInder -->
+
+    <div id="BH-Finder">
+        <h2 style="text-align: left; margin-left: 10%; margin-top: 5%;">Aktuelle Saison-Produke:</h2> <!--ich hab hier einen Style definiert. Da steht was drin wie bei css, nur halt direkt in HTML. Spart man sich ne eigenen ID für nur eine Änderung-->
+        <div class="Artikel" onclick="OpenArticle(1)" id="1"> <!--Ein Artikel mit ID, um zu wissen, wo man drauf gedrückt hat.-->
+            <div class="ImgDiv">
+                <img src="Bilder/74202-365_detail01_800x1200.webp" class="PreVis">
+            </div>
+            <div class="Info">
+                <h3 class="ArtikelTitle">Triangel-BH</h3>
+                <p class="Serie">Serie Poetry Glam</p>
+                <h3 class="price">Ab 49.99€</h3>
+                <div class="circles">
+                    <div class="ColorCircle" style="background-color: #351e2e;"></div>
+
+                </div>
+            </div>
+            <div class="singleProduct">
+                <img src="Bilder/74202-365_fs_800x1200.webp" class="SingleProduktIMG">
+            </div>
+        </div>
+
+        <div class="Artikel" onclick="OpenArticle(2)" id="2">
+            <div class="ImgDiv">
+                <img src="Bilder/74185-74_detail02_800x1200.webp" class="PreVis">
+            </div>
+            <div class="Info">
+                <h3 class="ArtikelTitle">Triangel-BH</h3>
+                <p class="Serie">Serie Poetry Glam</p>
+                <h3 class="price">Ab 49.99€</h3>
+                <div class="circles">
+                    <div class="ColorCircle" style="background-color: #c44622;"></div>
+
+                </div>
+            </div>
+            <div class="singleProduct">
+                <img src="Bilder/74185-74_fs_800x1200.webp" class="SingleProduktIMG">
+            </div>
+        </div>
+        <div class="Artikel" onclick="OpenArticle(3)" id="3">
+            <div class="ImgDiv">
+                <img src="Bilder/74118-79_detail01_800x1200.webp" class="PreVis">
+            </div>
+            <div class="Info">
+                <h3 class="ArtikelTitle">Triangel-BH</h3>
+                <p class="Serie">Serie Poetry Glam</p>
+                <h3 class="price">Ab 49.99€</h3>
+                <div class="circles">
+                    <div class="ColorCircle" style="background-color: #fccf80;"></div>
+
+                </div>
+            </div>
+            <div class="singleProduct">
+                <img src="Bilder/74118-79_fs_800x1200.webp" class="SingleProduktIMG">
+            </div>
+        </div>
+        <div class="Artikel" onclick="OpenArticle(4)" id="4">
+            <div class="ImgDiv">
+                <img src="Bilder/74443-75_800x1200.webp" class="PreVis">
+            </div>
+            <div class="Info">
+                <h3 class="ArtikelTitle">Full Cup BH </h3>
+                <p class="Serie">Serie Delightful</p>
+                <h3 class="price">Ab 84,99€</h3>
+                <div class="circles">
+                    <div class="ColorCircle" style="background-color: #040046;"></div>
+
+                </div>
+            </div>
+            <div class="singleProduct">
+                <img src="Bilder/74443-75_fs_800x1200.webp" class="SingleProduktIMG">
+            </div>
+        </div>
+        <div class="Artikel" onclick="OpenArticle(5)" id="5">
+            <div class="ImgDiv">
+                <img src="Bilder/74039-46_800x1200.webp" class="PreVis">
+            </div>
+            <div class="Info">
+                <h3 class="ArtikelTitle">Triangel-BH</h3>
+                <p class="Serie">Serie Poetry Iconic</p>
+                <h3 class="price">Ab 54,99 € </h3>
+                <div class="circles">
+                    <div class="ColorCircle" style="background-color: #8F8C5C;"></div>
+
+                </div>
+            </div>
+            <div class="singleProduct">
+                <img src="Bilder/74039-46_fs_800x1200.webp" class="SingleProduktIMG">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

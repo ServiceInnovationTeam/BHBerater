@@ -1,0 +1,435 @@
+h1 {
+    color: black;
+    font-size: 2em;
+    font-family: 'Bota-Bold', Georgia, 'Times New Roman', Times, serif;
+
+}
+
+h2 {
+    color: black;
+    font-size: 1.3em;
+    font-family: 'Bota-Bold', Georgia, 'Times New Roman', Times, serif;
+
+}
+h3{
+    color: black;
+    font-size: 1.3em;
+    font-family: 'Bota-Bold', Georgia, 'Times New Roman', Times, serif;
+}
+
+#Logo {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    height: 4vw;
+    width: auto;
+    z-index: 600;
+}
+
+
+
+#Img1{
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    height: 36%;
+    width: auto;
+}
+#Img2{
+    position: absolute;
+    bottom: 2%;
+    right:  2%;
+    height: 69%;
+    width: auto;
+}
+
+#Img3{
+    position: absolute;
+    bottom: 2%;
+    right:  2%;
+    height: 35%;
+    width: auto;
+    opacity: 0;
+}
+
+#Img4{
+    position: absolute;
+    bottom: 2%;
+    right:  2%;
+    height: 47%;
+    width: auto;
+    opacity: 0;
+}
+
+#Img1 #Img2 #Img3 #Img4 #Logo{
+
+        mix-blend-mode: color-burn ;
+
+}
+
+p {
+    font-family: 'CircularXXSub-RegularSubset', Helvetica, Corbel, Arial, sans-serif;
+    font-size: 1em;
+
+}
+
+.vid {
+    position: absolute;
+    left: 15%;
+    top: 17%;
+    width: 25%;
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#StartDiv {
+    position: absolute;
+    padding-top: 7.5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 45%;
+    text-align: center;
+    opacity: 1;
+}
+
+#Unterbrustumfang,
+#Oberbrustweite {
+    display: block;
+    position: absolute;
+    padding-top: 10%;
+    margin: auto;
+    width: 45%;
+    text-align: center;
+    opacity: 0;
+    padding-left: 50%;
+    transition: opacity 500ms;
+    visibility: hidden;
+}
+
+.ErrorText{
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+#Ergebnis {
+    position: absolute;
+    padding-top: 7.5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 45%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+#Shop{
+    position: absolute;
+    height: 90%;
+    width: 45%;
+    text-align: center;
+    left:3%;
+    top: 5%;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 500ms;
+    visibility: hidden;
+}
+
+.ShopImageContainer{
+    position: relative;
+    width: auto;
+    height: 91%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 3.5%;
+ }
+
+.ShopImage{
+    position: absolute;
+    margin: auto;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);  
+    border-radius: 1.5%;
+ }
+
+
+#BH-Finder {
+    position: absolute;
+    height: 90%;
+    margin: auto;
+    width: 45%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 500ms;
+    visibility: hidden;
+    border-radius: 5vh;
+    background-color: #E6E6E6;
+    right: 3%;
+    top: 5%;
+    overflow: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#BH-Finder::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#BH-Finder {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/*
+.Artikel{
+    position: relative;
+    border-radius: 60px;
+    background-color: white;
+    margin: 10%;
+    height: 70%;
+    width: auto;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: left;
+}*/
+
+
+.Artikel{
+    position: relative;
+    border-radius: 1.5vh;
+    background-color: white;
+    margin: 3%;
+    height: 17%;
+    width: auto;
+    padding: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    text-align: left;
+    overflow: hidden;
+    transition: height 500ms;
+}
+
+.ImgDiv{
+    position: relative;
+    width: 20%;
+    height: 100%;
+    border-radius: 1.5%;
+    float: left;   
+    margin-right: 5%;
+    overflow: hidden;
+    display: flex;
+    transition: width 500ms;
+}
+
+.singleProduct{
+   position: relative;
+   width: 49%;
+   height: 60%;
+   overflow: hidden;
+   margin: auto;
+   margin-top: 6%;
+   border-radius: 3.5%;
+}
+
+
+
+.PreVis{
+    position: absolute;
+    max-height: 100%; 
+    width: auto;
+    border-radius: 15px;
+    left: 50%;
+   top: 50%;
+   -webkit-transform: translateY(-50%) translateX(-50%);  
+}
+
+.SingleProduktIMG{
+    position: absolute;
+    max-height: 100%; 
+    width: auto;
+    border-radius: 1.5%;
+    left: 50%;
+   top: 50%;
+   -webkit-transform: translateY(-50%) translateX(-50%);  
+}
+
+.Info{
+    position: relative;
+    margin: auto;
+    height: auto;
+    min-width: auto;
+    min-height: 100%;
+    word-wrap:break-word;
+    overflow: hidden;
+    transition: min-height 500ms;
+}
+
+/*
+Artikel, height auf 71%
+Info, min height auf 16%
+ImgDiv width: von 20 auf 46%
+*/
+
+.ArtikelTitle{
+    display: inline-block;
+    margin: 0px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.Serie{
+    color: #707070;
+    margin: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    left:0px;
+    margin-top: 1.5%;
+}
+
+.circles{
+    position: absolute;
+    float: left;   
+    vertical-align: bottom; 
+    min-height: auto;
+    bottom: 0px;
+}
+
+.ColorCircle{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 1000px;
+    float: left;
+    margin-right: 20px;
+}
+
+.price{
+    font-size: 1.7em;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    float:right;
+    margin-bottom: 0px;
+}
+
+button {
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: gray;
+    background-color: white;
+    margin-top: 5%;
+}
+
+.TextInButton {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+input {
+    height: 50px;
+    width: 250px;
+    border-radius: 25px;
+    border-width: 3px;
+    background-color: white;
+    font-size: 1.5em;
+    text-align: center;
+    border-color: gray;
+}
+
+form {
+    margin-top: 5%;
+}
+
+
+
+
+
+@media screen and  (orientation:portrait){  
+    #StartDiv{
+        padding-top: 45%;
+    }
+    h1{
+       font-size:  2.6em;
+    }
+    h2{
+        font-size: 2.3em;
+    }
+    p{
+        font-size: 2em;
+    }
+ 
+    button{
+        padding: 46px;
+        border-width: 5px;
+        border-radius: 50px;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    #Unterbrustumfang, #Oberbrustweite{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-left: 0;
+        padding-top: 35%;
+        display: none;
+    }
+
+    .vid{
+        display: flex;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        left: unset;
+        top: unset;
+        width: 40%;
+    }
+
+    #Ergebnis{
+        padding-top: 42.5%;
+    }
+ 
+    #Img1{
+    height: 21vh;
+    }
+    #Img2{
+        height: 40vh;
+    }
+
+    #Img4{
+        height: 25%;
+    }
+    #Shop{
+        display: none;
+    }
+
+    #BH-Finder{
+        width: 90%;
+        margin-top: 7vw;
+        height: 140vw;
+        left: unset;
+        top: unset;
+
+    }
+
+    .ShopImage{
+        position: relative;
+        left: unset;
+        top: unset;
+        -webkit-transform: unset unset;
+
+    }
+}
